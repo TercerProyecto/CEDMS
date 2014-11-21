@@ -11,12 +11,12 @@ import java.io.IOException;
  *
  * @author Ellioth
  */
-public class caminoC {
+public class caminoCorto {
     private Lista matriz;
     private Lista Comp;
     private Grafo Prinp;
     
-    public caminoC() throws IOException{
+    public caminoCorto() throws IOException{
         matriz =new Lista();
         Comp= new Lista();
         Prinp= new Grafo();
