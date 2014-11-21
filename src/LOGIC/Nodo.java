@@ -1,68 +1,56 @@
-/**
- * Last edition: 10/30/2014
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
-/**
- * Package "Logic"
- */
 package LOGIC;
 
+import java.util.ArrayList;
+
 /**
- * @author Albin, Jairo and Ellioth
- * This class create the nodes
+ *
+ * @author estadm
  */
-public class Nodo <T>{
-    private T _data;
-    private Nodo _next;
-    private Nodo _anterior;
+public class Nodo {
+    private int _Id;
+    private int _Puerto;
+    private int _tipo;
+    private ArrayList _ListaConecciones;
+    private float _Precio;
+    private String _Ip;
     
-    /**
-     * Constructor of the class
-     * @param pData 
-     */
-    public Nodo(T pData){
-        this._data=pData;
+    public Nodo(int pId, int pPuerto,int ptipo){
+        this._Id = pId;
+        this._Puerto = pPuerto;
+        this._tipo = ptipo; 
+        _ListaConecciones = null;
+        _Precio=0;
     }
-    /**
-     * Get to know the data of the node
-     * @return value T (the data of the node)
-     */
-    public T get_data(){
-        return this._data;
+    public void setNewConeccion(Nodo pNodo){
+        _ListaConecciones.add(pNodo);
     }
-    /**
-     * Set to change the data of the node
-     * @param pdata (type T) 
-     */
-    public void set_data(T pdata){
-        _data=pdata;
+    public void elimiarConeccion(Nodo pNodo){
+        _ListaConecciones.remove(pNodo);
     }
-    /**
-     * Set to change the next node
-     * @param next (type Node)
-     */
-    public void setNext(Nodo next){
-        this._next = next;
+    public void setPrecio(int pPrecio){
+        _Precio = pPrecio;
     }
-    /**
-     * Set to change the previous node
-     * @param anterior (type Node)
-     */
-    public void setAnterior(Nodo anterior){
-        this._anterior=anterior;
+    public float getPrecio(){
+        return _Precio;
     }
-    /**
-     * Get to know the next node
-     * @return node (next node)
-     */
-    public Nodo getNext(){
-        return _next;
+    public ArrayList getConecciones(){
+        return _ListaConecciones;
     }
-    /**
-     * Get to know the previous node
-     * @return node (previous node)
-     */
-    public Nodo getAnterior(){
-        return _anterior;
+    public void setIp(String pIp){
+        _Ip = pIp;
     }
+    public String getIp(){
+        return _Ip;
+    }
+    public int getId(){
+        return _Id;
+    }
+    
+    
 }
