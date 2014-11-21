@@ -52,7 +52,8 @@ public class Grafo {
         return null;
     }
     public int[][] matrizAdyacente(){
-    
+        int[][] matriz={};
+        return matriz;
     }
 
     /**
