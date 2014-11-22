@@ -27,10 +27,10 @@ public class Nodo {
         _ListaConecciones = null;
         _Precio=0;
     }
-    public void setNewConeccion(Nodo pNodo){
+    public void setNewConexion(Nodo pNodo){
         _ListaConecciones.add(pNodo);
     }
-    public void elimiarConeccion(Nodo pNodo){
+    public void elimiarConexion(Nodo pNodo){
         _ListaConecciones.remove(pNodo);
     }
     public void setPrecio(int pPrecio){

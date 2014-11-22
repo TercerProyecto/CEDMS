@@ -12,12 +12,12 @@ import java.util.ArrayList;
  *
  * @author estadm
  */
-public class Grafos {
+public class Grafo {
     private ArrayList nodos;
     private int numeroNodos;
     private float[][] _MatrizAdyacencia;
     
-    public Grafos(){
+    public Grafo(){
         nodos = null;
         numeroNodos = 0;
         _MatrizAdyacencia = null;
@@ -30,7 +30,7 @@ public class Grafos {
         Nodo ip = NodoIp(pIp);
         Nodo id = NodoId(pId);
         if( id != null && ip != null){
-            id.setNewConeccion(id);
+            id.setNewConexion(id);
         }
     }
     private Nodo NodoId(int pId){
@@ -52,7 +52,8 @@ public class Grafos {
         return null;
     }
     public int[][] matrizAdyacente(){
-    
+        int[][] matriz={};
+        return matriz;
     }
 
     /**
