@@ -84,14 +84,14 @@ public class Usuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         jLabel2.setText("TO:");
         Pmsj.add(jLabel2);
-        jLabel2.setBounds(10, 10, 26, 18);
+        jLabel2.setBounds(10, 10, 24, 15);
         Pmsj.add(jTextField1);
-        jTextField1.setBounds(70, 40, 78, 20);
+        jTextField1.setBounds(70, 40, 78, 19);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         jLabel1.setText("Puerto:");
         Pmsj.add(jLabel1);
-        jLabel1.setBounds(10, 40, 54, 18);
+        jLabel1.setBounds(10, 40, 53, 15);
 
         Bsend.setText("Send");
         Bsend.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +100,7 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
         Pmsj.add(Bsend);
-        Bsend.setBounds(370, 280, 57, 23);
+        Bsend.setBounds(370, 280, 70, 25);
 
         Text_IPNumber.setText("IP Number");
         Text_IPNumber.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,7 +119,7 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
         Pmsj.add(Text_IPNumber);
-        Text_IPNumber.setBounds(69, 12, 216, 20);
+        Text_IPNumber.setBounds(69, 12, 216, 19);
 
         getContentPane().add(Pmsj);
         Pmsj.setBounds(0, 20, 430, 310);
@@ -142,7 +142,7 @@ public class Usuario extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
-        jMenuItem3.setText("Camino más Corto");
+        jMenuItem3.setText("Camino más Coto");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -150,12 +150,7 @@ public class Usuario extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
-        jMenuItem4.setText("Cambiar Peso de Conexiones");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
+        jMenuItem4.setText("Cambiar Peso de Conecciones");
         jMenu1.add(jMenuItem4);
 
         jMenuItem5.setText("Ver Nodos Adyacentes");
@@ -207,10 +202,6 @@ public class Usuario extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments

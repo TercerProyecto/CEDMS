@@ -24,7 +24,7 @@ public class Nodo {
         this._Id = pId;
         this._Puerto = pPuerto;
         this._tipo = ptipo; 
-        _ListaConecciones = new ArrayList();
+        _ListaConecciones = null;
         _Precio=0;
     }
     public void setNewConeccion(Nodo pNodo){
