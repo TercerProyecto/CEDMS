@@ -16,7 +16,7 @@ public class KnockKnockClient {
     PrintWriter out = null;
     BufferedReader in = null;
 
-    try {
+    try {//172.18.138.62
       kkSocket = new Socket("localhost",4444);
       out = new PrintWriter(kkSocket.getOutputStream(), true);
       in = new BufferedReader(new InputStreamReader(kkSocket.getInputStream()));

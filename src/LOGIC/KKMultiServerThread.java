@@ -19,6 +19,7 @@ public class KKMultiServerThread extends Thread {
 
 	    String inputLine, outputLine;
 	    KnockKnockProtocol kkp = new KnockKnockProtocol();
+            System.out.println("aqui estoy");
 	    outputLine = kkp.processInput(null);
 	    out.println(outputLine);
 
