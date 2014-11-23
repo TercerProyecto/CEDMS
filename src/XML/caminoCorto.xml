@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<mensaje>
+     <source>1234567890123459</source>
+    <target>1234567890123452</target>
+    <updateid>1234567890123459-667</updateid>
+    <titulo>Prueba</titulo>
+    <msg>Esra es una prueba</msg>
+    <numero>1</numero>
+    <ruta>
+        <nodo>1234567890123451</nodo>
+        <nodo>1234567890123452</nodo>
+    </ruta>
+</mensaje>

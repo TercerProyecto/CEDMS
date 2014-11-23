@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Cuando un nodo quiere conectarse a otro -->
+ 
+<connection> 
+   <source>1234567890123433</source> 
+   <target>1234567890123444</target> 
+   <updateid>1234567890123450­7889</updateid> 
+</connection> 

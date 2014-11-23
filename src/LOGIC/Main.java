@@ -26,9 +26,10 @@ public class Main {
     }
     
     public static void main(String[] args) {
-        Main main = new Main();
-        System.out.println(main.generarId());
-        
+        //Main main = new Main();
+        //System.out.println(main.generarId());
+        buscar c = new buscar();
+        c.Buscar("source");
     }
     
 }

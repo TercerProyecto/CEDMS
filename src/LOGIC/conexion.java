@@ -37,10 +37,45 @@ public class conexion {
     public conexion(){
         
     }
-    public void conectar(Document documento){
+    public void agregarConexion(String document){
+        String filePath = document;
+        File xmlFile = new File(filePath);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder;
+        try {
+            dBuilder = dbFactory.newDocumentBuilder();
+            Document documento = dBuilder.parse(xmlFile);
+            documento.getDocumentElement().normalize();            
+            agregar(documento);
+            documento.getDocumentElement().normalize();
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(documento);
+            StreamResult result = new StreamResult(new File("/home/jairo/NetBeansProjects/CEDMS/src/XML/grafo.xml"));
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.transform(source, result);
+        }
+        catch (SAXException | ParserConfigurationException | IOException | TransformerException e1) {
+            e1.printStackTrace();
+        }
+    }
+    
+    private void agregar(Document docto) {
+        NodeList disp = docto.getElementsByTagName("dispositivos");
+        Element emp = null;        
+        for(int i=0; i<disp.getLength();i++){
+            emp = (Element) disp.item(i);
+            Element dispElement = docto.createElement("dispositivo");
+            dispElement.setAttribute("source", "source");
+            dispElement.setAttribute("target", "target");
+            dispElement.setAttribute("precio", "precio");
+            emp.appendChild(dispElement);
+        }
+    }
+    
         
                 
-    }
+    
     public void agregardispositivo(String id, String tipo, String puerto){
         String filePath = "/home/jairo/NetBeansProjects/CEDMS/src/XML/grafo.xml";
         File xmlFile = new File(filePath);
@@ -48,39 +83,46 @@ public class conexion {
         DocumentBuilder dBuilder;
         try {
             dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(xmlFile);
-            doc.getDocumentElement().normalize();
-            
-            agregarElemento(doc, id, tipo, puerto);
-             
-            //write the updated document to file or console
-            doc.getDocumentElement().normalize();
+            Document document = dBuilder.parse(xmlFile);
+            document.getDocumentElement().normalize();            
+            agregarElemento(document, id, tipo, puerto);
+            document.getDocumentElement().normalize();
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(doc);
+            DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new File("/home/jairo/NetBeansProjects/CEDMS/src/XML/grafo.xml"));
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(source, result);
-            System.out.println("XML file updated successfully");
-             
-        } catch (SAXException | ParserConfigurationException | IOException | TransformerException e1) {
+        }
+        catch (SAXException | ParserConfigurationException | IOException | TransformerException e1) {
             e1.printStackTrace();
         }
-        
     }
-    private static void agregarElemento(Document docto, String id, String tipo, String puerto) {
-        NodeList disp = docto.getElementsByTagName("dispositivos");
-        Element emp = null;
-        
+    private void agregarElemento(Document docto, String id, String tipo, String puerto) {
+        NodeList disp = docto.getElementsByTagName("conexiones");
+        Element emp = null;        
         for(int i=0; i<disp.getLength();i++){
             emp = (Element) disp.item(i);
-            Element salaryElement = docto.createElement("dispositivo");
-            salaryElement.setAttribute("id", id);
-            salaryElement.setAttribute("tipo", tipo);
-            salaryElement.setAttribute("puerto", puerto);
-            emp.appendChild(salaryElement);
+            Element dispElement = docto.createElement("conexion");
+            dispElement.setAttribute("id", id);
+            dispElement.setAttribute("tipo", tipo);
+            dispElement.setAttribute("puerto", puerto);
+            emp.appendChild(dispElement);
         }
     }
-    
-    
+    public void Buscar(String docto, String name){
+        try {
+            Document archivo = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(docto);
+            XPath newXPath = XPathFactory.newInstance().newXPath();
+            Element listaEstudiantes = (Element) newXPath.evaluate("//connection[name='"+name+"']", archivo, XPathConstants.NODE);
+            
+                NamedNodeMap attributes = listaEstudiantes.getAttributes();
+                NodeList childNodes = listaEstudiantes.getChildNodes();
+                System.out.println("Find Student by name: "+name);
+                
+            
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);    
+        }
+    }
 }
