@@ -13,22 +13,35 @@ import java.util.ArrayList;
  *
  * @author estadm
  */
-public class Grafos {
+public class Grafo {
     private ArrayList nodos;
     private int _tamañoGrafo;
     private float[][] _MatrizAdyacencia;
     private int _tamañoAnt;
-    
-    public Grafos(){
+    /**
+     * Constructor
+     */
+    public Grafo(){
         nodos = new ArrayList();
         _tamañoGrafo = 0;
         _MatrizAdyacencia = null;
         _tamañoAnt = 0;
     }
+    /**
+     * agrega un nuevo nodo al grafo
+     * @param id
+     * @param puerto
+     * @param tipo 
+     */
     public void nuevoNodo(int id,int puerto,int tipo){ 
         nodos.add(new Nodo(id,puerto,tipo));
         _tamañoGrafo ++;
     }
+    /**
+     * Etablece una nueva coneccion entre dos nodos por medio sus numeros id
+     * @param pId
+     * @param pIp 
+     */
     public void newConeccion(int pId,int pIp){
         //Nodo ip = NodoIp(pIp);
         imprimirArrayList(nodos);
@@ -39,6 +52,11 @@ public class Grafos {
             cambiar(nodos, id);
         }
     }
+    /**
+     * Retorna un nodo a partir de un numero ID de este
+     * @param pId
+     * @return 
+     */
     private Nodo NodoId(int pId){
         for(int i=0;i< nodos.size();i++){
             if(((Nodo)nodos.get(i)).getId() == pId)
@@ -46,6 +64,11 @@ public class Grafos {
         }
         return null;
     }
+    /**
+     * Realiza un cambio entre un nodo externo y uno perteneciente a la lista.
+     * @param lista
+     * @param pnodo 
+     */
     private void cambiar(ArrayList lista,Nodo pnodo){
         for(int i=0; i<lista.size(); i++){
             if(((Nodo)lista.get(i)).getId() == pnodo.getId()){
@@ -54,6 +77,11 @@ public class Grafos {
         }
     
     }
+    /**
+     * Retorna un nodo a partir de un numero IP
+     * @param pIp
+     * @return Nodo 
+     */
     private Nodo NodoIp(String pIp){
         for(int i=0;i< nodos.size();i++){
             if(((Nodo)nodos.get(i)).getIp().equals(pIp))
@@ -61,6 +89,10 @@ public class Grafos {
         }
         return null;
     }
+    /**
+     * Hace las verificaciones de la matriz de adyacencia y de ser necesario llama a crearMatrizAdyacencia
+     * @return float[][] _MatrizAdyacencia
+     */
     public float[][] matrizAdyacente(){
         if(_tamañoAnt != _tamañoGrafo){
             _tamañoAnt= _tamañoGrafo;
@@ -69,6 +101,9 @@ public class Grafos {
         else
             return _MatrizAdyacencia;
     }
+    /**
+     * Imprime la matriz de Adyacencia
+     */
     public void imprimirMatrizAdyacencia(){
         crearMatrizAdyacente();
         for(int i =0; i< _tamañoGrafo;i++){
@@ -78,7 +113,10 @@ public class Grafos {
             }
         }
     }
-    
+    /**
+     * 
+     * @param lista 
+     */
     private void imprimirArrayList(ArrayList lista){
         System.out.println(lista.size());
         for(int i =0; i<lista.size();i++){
@@ -87,6 +125,10 @@ public class Grafos {
         System.out.println("");
         
     }
+    /**
+     * Creaa la matriza Adyacente 
+     * @return float[][] _MatrizAdyacente
+     */
     private float[][] crearMatrizAdyacente(){
          _MatrizAdyacencia = new float[_tamañoGrafo][_tamañoGrafo];
         for(int i=0; i<_tamañoGrafo;i++){
@@ -102,6 +144,12 @@ public class Grafos {
         return _MatrizAdyacencia;
     
     }
+    /**
+     * Verifica si hay coneccion en tre un nodo y otro.
+     * @param pContenedor
+     * @param pNodo
+     * @return boolean
+     */
     private boolean esConeccion(ArrayList pContenedor, Nodo pNodo){
         for(int i=0; i< pContenedor.size();i++){
             if(pContenedor.get(i) == pNodo){
@@ -110,12 +158,11 @@ public class Grafos {
         }
         return false;
     }
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Grafos grafo = new Grafos();
+        Grafo grafo = new Grafo();
         grafo.nuevoNodo(1, 12, 1);
         grafo.nuevoNodo(2, 124,2);
         grafo.nuevoNodo(3, 156,3);
