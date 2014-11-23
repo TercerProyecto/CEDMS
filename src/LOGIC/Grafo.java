@@ -33,7 +33,7 @@ public class Grafo {
      * @param puerto
      * @param tipo 
      */
-    public void nuevoNodo(int id,int puerto,int tipo){ 
+    public void nuevoNodo(long id,int puerto,int tipo){ 
         nodos.add(new Nodo(id,puerto,tipo));
         _tamañoGrafo ++;
     }

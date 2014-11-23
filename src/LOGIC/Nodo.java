@@ -13,14 +13,14 @@ import java.util.ArrayList;
  * @author estadm
  */
 public class Nodo {
-    private int _Id;
+    private long _Id;
     private int _Puerto;
     private int _tipo;
     private ArrayList _ListaConecciones;
     private float _Precio;
     private String _Ip;
     
-    public Nodo(int pId, int pPuerto,int ptipo){
+    public Nodo(long pId, int pPuerto,int ptipo){
         this._Id = pId;
         this._Puerto = pPuerto;
         this._tipo = ptipo; 
@@ -48,7 +48,7 @@ public class Nodo {
     public String getIp(){
         return _Ip;
     }
-    public int getId(){
+    public long getId(){
         return _Id;
     }
     

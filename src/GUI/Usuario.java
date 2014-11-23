@@ -43,6 +43,7 @@ public class Usuario extends javax.swing.JFrame {
         Text_IPNumber = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -86,7 +87,7 @@ public class Usuario extends javax.swing.JFrame {
         Pmsj.add(jLabel2);
         jLabel2.setBounds(10, 10, 24, 15);
         Pmsj.add(jTextField1);
-        jTextField1.setBounds(70, 40, 78, 19);
+        jTextField1.setBounds(70, 40, 78, 28);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         jLabel1.setText("Puerto:");
@@ -100,7 +101,7 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
         Pmsj.add(Bsend);
-        Bsend.setBounds(370, 280, 70, 25);
+        Bsend.setBounds(370, 280, 47, 30);
 
         Text_IPNumber.setText("IP Number");
         Text_IPNumber.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,12 +120,20 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
         Pmsj.add(Text_IPNumber);
-        Text_IPNumber.setBounds(69, 12, 216, 19);
+        Text_IPNumber.setBounds(69, 12, 216, 28);
 
         getContentPane().add(Pmsj);
         Pmsj.setBounds(0, 20, 430, 310);
 
         jMenu1.setText("Opciones");
+
+        jMenuItem7.setText("Nueva Conexion");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem7);
 
         jMenuItem1.setText("Mensajes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +212,13 @@ public class Usuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        conexion newConnecion;
+        newConnecion = new conexion();
+        newConnecion.setVisible(true);
+                
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -254,6 +270,7 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
